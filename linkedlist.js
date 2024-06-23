@@ -1,13 +1,12 @@
 export function LinkedList() {
   let list = null;
 
-  const print = () => console.log(head);
-
   const append = (node) => {
-    if (!head) {
-      head = node;
+    const listHead = head();
+    if (!listHead) {
+      list = node;
     } else {
-      let previous = head;
+      let previous = listHead;
       while (previous.next !== null) {
         previous = previous.next;
       }
@@ -17,5 +16,5 @@ export function LinkedList() {
 
   const head = () => list;
 
-  return { head, print, append };
+  return { append, head };
 }
