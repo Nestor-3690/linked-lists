@@ -1,3 +1,3 @@
-function LinkedList() {
+export function LinkedList() {
   let head = null;
 }
