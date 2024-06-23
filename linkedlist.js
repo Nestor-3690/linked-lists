@@ -1,6 +1,8 @@
 export function LinkedList() {
   let head = null;
 
+  const print = () => console.log(head);
+
   const append = (node) => {
     if (!head) {
       head = node;
@@ -13,5 +15,5 @@ export function LinkedList() {
     }
   };
 
-  return { head, append };
+  return { head, print, append };
 }
