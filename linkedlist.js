@@ -14,7 +14,15 @@ export function LinkedList() {
     }
   };
 
+  const prepend = (node) => {
+    const listHead = head();
+    if (listHead) {
+      node.next = listHead;
+    }
+    list = node;
+  };
+
   const head = () => list;
 
-  return { append, head };
+  return { append, head, prepend };
 }
