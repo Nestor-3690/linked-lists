@@ -101,5 +101,29 @@ export function LinkedList() {
     }
   };
 
-  return { append, prepend, size, head, tail, at, pop, contains, find };
+  const toString = () => {
+    const listHead = head();
+    let actual = listHead;
+    let string = '';
+    /* let string = `( actual.value )`; */
+    while (actual !== null) {
+      string += `( ${actual.value} ) -> `;
+      actual = actual.next;
+    }
+    string += 'null';
+    return string;
+  };
+
+  return {
+    append,
+    prepend,
+    size,
+    head,
+    tail,
+    at,
+    pop,
+    contains,
+    find,
+    toString,
+  };
 }
