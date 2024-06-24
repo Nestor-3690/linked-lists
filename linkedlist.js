@@ -61,5 +61,13 @@ export function LinkedList() {
     return actual;
   };
 
-  return { append, prepend, size, head, tail, at };
+  const pop = () => {
+    const listHead = head();
+    if (!listHead) return list;
+    const listSize = size();
+    const prevNode = at(listSize - 2);
+    prevNode.next = null;
+  };
+
+  return { append, prepend, size, head, tail, at, pop };
 }
