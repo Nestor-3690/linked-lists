@@ -114,6 +114,21 @@ export function LinkedList() {
     return string;
   };
 
+  const insertAt = (node, index) => {
+    const listHead = head();
+    if ((!listHead && index !== 0) || size() < index) {
+      throw Error('Incorrect Index');
+    }
+    if (index === 0) prepend(node);
+    else if (index === size) append(node);
+    else {
+      const previousNode = at(index - 1);
+      const nextNode = at(index);
+      previousNode.next = node;
+      node.next = nextNode;
+    }
+  };
+
   return {
     append,
     prepend,
@@ -125,5 +140,6 @@ export function LinkedList() {
     contains,
     find,
     toString,
+    insertAt,
   };
 }
