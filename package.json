@@ -1,5 +1,5 @@
 {
-  "name": "linked-lists-and-nodes",
+  "name": "linkedlists-and-nodes",
   "version": "1.0.0",
   "type": "module",
   "description": "### Description",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nestor-3690/linked-lists.git"
+    "url": "git+https://github.com/NestorNebula/linked-lists.git"
   },
   "author": "Noa Houssier",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Nestor-3690/linked-lists/issues"
+    "url": "https://github.com/NestorNebula/linked-lists/issues"
   },
-  "homepage": "https://github.com/Nestor-3690/linked-lists#readme"
+  "homepage": "https://github.com/NestorNebula/linked-lists#readme"
 }
