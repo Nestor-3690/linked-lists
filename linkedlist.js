@@ -53,7 +53,7 @@ export function LinkedList() {
     let actual = listHead;
     while (counter !== index) {
       if (actual.next === null) {
-        return 'Error';
+        throw Error('Incorrect Index');
       }
       actual = actual.next;
       counter += 1;
