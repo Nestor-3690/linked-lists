@@ -129,6 +129,19 @@ export function LinkedList() {
     }
   };
 
+  const removeAt = (index) => {
+    const listHead = head();
+    if (!listHead || size() <= index) throw Error('Incorect Index');
+    if (index === size() - 1) pop();
+    else if (index === 0) {
+      list = at(1);
+    } else {
+      const previousNode = at(index - 1);
+      const nextNode = at(index + 1);
+      previousNode.next = nextNode;
+    }
+  };
+
   return {
     append,
     prepend,
@@ -141,5 +154,6 @@ export function LinkedList() {
     find,
     toString,
     insertAt,
+    removeAt,
   };
 }
