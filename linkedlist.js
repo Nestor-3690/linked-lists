@@ -22,7 +22,19 @@ export function LinkedList() {
     list = node;
   };
 
+  const size = () => {
+    const listHead = head();
+    if (!listHead) return 0;
+    let counter = 1;
+    let actual = listHead;
+    while (actual.next !== null) {
+      counter += 1;
+      actual = actual.next;
+    }
+    return counter;
+  };
+
   const head = () => list;
 
-  return { append, head, prepend };
+  return { append, prepend, size, head };
 }
