@@ -105,7 +105,6 @@ export function LinkedList() {
     const listHead = head();
     let actual = listHead;
     let string = '';
-    /* let string = `( actual.value )`; */
     while (actual !== null) {
       string += `( ${actual.value} ) -> `;
       actual = actual.next;
