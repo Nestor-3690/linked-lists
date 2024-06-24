@@ -69,5 +69,18 @@ export function LinkedList() {
     prevNode.next = null;
   };
 
-  return { append, prepend, size, head, tail, at, pop };
+  const contains = (value) => {
+    const listHead = head();
+    if (!listHead) return false;
+    let actual = listHead;
+    while (actual.next !== null) {
+      if (actual.value === value) {
+        return true;
+      }
+      actual = actual.next;
+    }
+    return false;
+  };
+
+  return { append, prepend, size, head, tail, at, pop, contains };
 }
