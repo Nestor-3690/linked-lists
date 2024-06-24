@@ -33,4 +33,4 @@ These nodes can then be added to the linked list via the LinkedList functions.
 
 ## Package Link
 
-This package can be found at this [link](https://www.npmjs.com/package/linked-lists-and-nodes).
+This package can be found at this [link](https://www.npmjs.com/package/linkedlists-and-nodes).
