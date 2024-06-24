@@ -36,5 +36,15 @@ export function LinkedList() {
 
   const head = () => list;
 
-  return { append, prepend, size, head };
+  const tail = () => {
+    const listHead = head();
+    if (!listHead) return list;
+    let actual = listHead;
+    while (actual.next !== null) {
+      actual = actual.next;
+    }
+    return actual;
+  };
+
+  return { append, prepend, size, head, tail };
 }
