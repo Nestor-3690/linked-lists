@@ -46,5 +46,20 @@ export function LinkedList() {
     return actual;
   };
 
-  return { append, prepend, size, head, tail };
+  const at = (index) => {
+    const listHead = head();
+    if (!listHead) return list;
+    let counter = 0;
+    let actual = listHead;
+    while (counter !== index) {
+      if (actual.next === null) {
+        return 'Error';
+      }
+      actual = actual.next;
+      counter += 1;
+    }
+    return actual;
+  };
+
+  return { append, prepend, size, head, tail, at };
 }
