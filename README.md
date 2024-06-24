@@ -2,7 +2,8 @@
 
 ## Description
 
-This package contains:
+This project's goal is to add class / factory for creating linked lists and nodes to append to them.
+The package contains:
 
 ### LinkedList
 
@@ -29,3 +30,7 @@ A class that when invoked with an argument _value_ (new Node(_value_)) returns a
 - node.next = null
 
 These nodes can then be added to the linked list via the LinkedList functions.
+
+## Package Link
+
+This package can be found at this [link](https://www.npmjs.com/package/linked-lists-and-nodes).
