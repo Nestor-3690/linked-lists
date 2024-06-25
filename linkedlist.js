@@ -7,10 +7,14 @@ export function LinkedList() {
       list = node;
     } else {
       let previous = listHead;
-      while (previous.next !== null) {
-        previous = previous.next;
+      while (previous !== null) {
+        if (previous.next !== null) {
+          previous = previous.next;
+        } else {
+          previous.next = node;
+          return true;
+        }
       }
-      previous.next = node;
     }
   };
 
@@ -52,7 +56,7 @@ export function LinkedList() {
     let counter = 0;
     let actual = listHead;
     while (counter !== index) {
-      if (actual.next === null) {
+      if (actual === null) {
         throw Error('Incorrect Index');
       }
       actual = actual.next;
@@ -65,15 +69,19 @@ export function LinkedList() {
     const listHead = head();
     if (!listHead) return list;
     const listSize = size();
-    const prevNode = at(listSize - 2);
-    prevNode.next = null;
+    if (listSize === 1) {
+      list = null;
+    } else {
+      const prevNode = at(listSize - 2);
+      prevNode.next = null;
+    }
   };
 
   const contains = (value) => {
     const listHead = head();
     if (!listHead) return false;
     let actual = listHead;
-    while (actual.next !== null) {
+    while (actual !== null) {
       if (actual.value === value) {
         return true;
       }
@@ -87,18 +95,14 @@ export function LinkedList() {
     if (!listHead) return false;
     let counter = 0;
     let actual = listHead;
-    while (actual.next !== null) {
+    while (actual !== null) {
       if (actual.value === value) {
         return counter;
       }
       actual = actual.next;
       counter += 1;
     }
-    if (actual.value === value) {
-      return counter;
-    } else {
-      return null;
-    }
+    return null;
   };
 
   const toString = () => {
@@ -119,7 +123,7 @@ export function LinkedList() {
       throw Error('Incorrect Index');
     }
     if (index === 0) prepend(node);
-    else if (index === size) append(node);
+    else if (index === size()) append(node);
     else {
       const previousNode = at(index - 1);
       const nextNode = at(index);
@@ -133,7 +137,11 @@ export function LinkedList() {
     if (!listHead || size() <= index) throw Error('Incorect Index');
     if (index === size() - 1) pop();
     else if (index === 0) {
-      list = at(1);
+      if (at(1) !== null) {
+        list = at(1);
+      } else {
+        list = null;
+      }
     } else {
       const previousNode = at(index - 1);
       const nextNode = at(index + 1);
